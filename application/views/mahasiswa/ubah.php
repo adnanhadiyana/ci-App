@@ -7,7 +7,7 @@
     Form Ubah Data Mahasiswa
   </div> 
   <form action="" method="post">
-  <input type="hidden" value="Id" value="<?= $mahasiswa['Id'];?>">
+  <input type="hidden" name="Id" value="<?= $mahasiswa['Id'];?>">
 <div class="form-group">
     <label for="Nama">Nama</label>
     <input type="txt" name="Nama" class="form-control" id="Nama" value="<?=$mahasiswa['Nama'];?>">
