@@ -4,36 +4,38 @@
 <div class="col-md-6">
 <div class="card">
   <div class="card-header">
-    Form Tambah Data Mahasiswa
+    Form Ubah Data Mahasiswa
   </div> 
   <form action="" method="post">
+  <input type="hidden" value="Id" value="<?= $mahasiswa['Id'];?>">
 <div class="form-group">
     <label for="Nama">Nama</label>
-    <input type="txt" name="Nama" class="form-control" id="Nama">
+    <input type="txt" name="Nama" class="form-control" id="Nama" value="<?=$mahasiswa['Nama'];?>">
     <small class="form-text text-danger"><?= form_error('Nama');?></small>
   </div>
 <div class="form-group">
     <label for="Nrp">NRP</label>
-    <input type="txt" name="Nrp" class="form-control" id="Nrp">
+    <input type="txt" name="Nrp" class="form-control" id="Nrp"value="<?=$mahasiswa['Nrp'];?>">
     <small class="form-text text-danger"><?= form_error('Nrp');?></small>
   </div>
 <div class="form-group">
     <label for="Email">Email</label>
-    <input type="txt" name="Email" class="form-control" id="Email">
+    <input type="txt" name="Email" class="form-control" id="Email" value="<?=$mahasiswa['Email'];?>">
     <small class="form-text text-danger"><?= form_error('Email');?></small>
   </div>
   <div class="form-group">
     <label for="Jurusan">Jurusan</label>
     <select class="form-control" id="Jurusan" name="Jurusan">
-      <option value="Teknik Industri">Teknik Industri</option>
-      <option value="Teknologi Pangan">Teknologi Pangan</option>
-      <option value="Teknik Mesin">Teknik Mesin</option>
-      <option value="Teknik Informatika">Teknik Informatika</option>
-      <option value="Teknik Industri">Teknik Lingkungan</option>
-      <option value="Perncangan Wilayah Dan Kota">Perncangan Wilayah Dan Kota</option>
+    <?php foreach($jurusan as $j) : ?>
+    <?php if($j == $mahasiswa['Jurusan'] ): ?>
+        <option value="<?=$j?>"selected><?= $j; ?></option>
+        <?php else : ?>
+        <option value="<?=$j?>"><?= $j; ?></option>
+        <?php endif; ?>
+        <?php endforeach; ?>
     </select>
   </div>
-  <button type="submit" name="tambah" class="btn btn-primary float-right" >Tambah Data</button>
+  <button type="submit" name="ubah" class="btn btn-primary float-right" >Ubah Data</button>
 </form>
   </div>
 </div>

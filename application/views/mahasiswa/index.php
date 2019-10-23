@@ -23,6 +23,8 @@
     <?php foreach($mahasiswa as $mhs) : ?>
     <li class="list-group-item"><?= $mhs['Nama'];?>
     <a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['Id']; ?>" class="badge badge-danger float-right tombol-hapus"onclick="return confirm('yakin ?');">  Hapus</a>
+    <a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['Id']; ?>" class="badge badge-success float-right tombol-hapus">Ubah</a>
+    <a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['Id']; ?>" class="badge badge-primary float-right tombol-hapus">Detail</a>
     </li>
 <?php endforeach; ?>
     </ul>
